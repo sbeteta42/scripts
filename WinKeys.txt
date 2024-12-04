@@ -1,22 +1,15 @@
-``````````````````````````````````````````
-Windows Product Keys for Getting Past Setup
-Windows XP - Windows 11
-
-Home product keys are currently not added.
-THESE WILL ONLY HELP YOU GET PAST SETUP AND WILL NOT
-ACTIVATE WHEN YOU CONNECT TO THE INTERNET. THESE JUST
-LET YOU INSTALL WINDOWS TO YOUR HARDDISK UNACTIVATED
-
-``````````````````````````````````````````
-
 
 =======================================
 Windows Desktop (Home, Pro, Enterprise)
 =======================================
 
-
 Windows 10 / Windows 11 Keys
 ============================
+
+Windows 10 Enterprise LTSC 2019	M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+Windows 11 Enterprise N LTSC 2024
+Windows 10 Enterprise N LTSC 2021
+Windows 10 Enterprise N LTSC 2019	92NFX-8DJQP-P6BBQ-THF9C-7CG2
 
 Windows 10/11 Pro | W269N-WFGWX-YVC9B-4J6C9-T83GX
 
@@ -134,24 +127,27 @@ Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6
 
 Windows Server Standard | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4
 
+Windows Server 2025
+===================
+
+Windows Server 2025 Standard	TVRH6-WHNXV-R9WG3-9XRFY-MY832
+Windows Server 2025 Datacenter	D764K-2NDRG-47T6Q-P8T8W-YP6DF
+Windows Server 2025 Datacenter: Azure Edition	XGN3F-F394H-FD2MY-PP6FD-8MCRC
 
 Windows Server 2022
 ===================
 
-Windows Server 2022 Datacenter | WX4NM-KYWYW-QJJR4-XV3QB-6VM33
-
-Windows Server 2022 Standard | VDYBN-27WPP-V4HQT-9VMD4-VMK7H
+Windows Server 2022 Standard	VDYBN-27WPP-V4HQT-9VMD4-VMK7H
+Windows Server 2022 Datacenter	WX4NM-KYWYW-QJJR4-XV3QB-6VM33
+Windows Server 2022 Datacenter: Azure Edition	NTBV8-9K7Q8-V27C6-M2BTV-KHMXV
 
 
 Windows Server 2019
 ===================
 
-Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG
-
-Windows Server 2019 Standard | N69G4-B89J2-4G8F4-WWYCC-J464C
-
-Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726
-
+Windows Server 2019 Standard	N69G4-B89J2-4G8F4-WWYCC-J464C
+Windows Server 2019 Datacenter	WMDGN-G9PQG-XVVXX-R3X43-63DFG
+Windows Server 2019 Essentials	WVDHN-86M7X-466P6-VHXV7-YY726
 
 Windows Server 2016
 ===================
