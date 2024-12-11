@@ -12,7 +12,6 @@
   Activation de toutes version Windows (y compris Server)
   <br>
 </h3>
-
 ### Commande à entrer dans Powershell
 
 - Ouvrir Powershell avec les droits Administrateur
