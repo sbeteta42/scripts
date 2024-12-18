@@ -16,5 +16,5 @@
 - Ouvrir Powershell avec les droits Administrateur
   
 ```powershell
-irm htps://get.activated.win | iex
+irm https://get.activated.win | iex
 ```
