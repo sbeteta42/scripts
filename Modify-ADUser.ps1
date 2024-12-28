@@ -1,25 +1,15 @@
 param (
     [string]$Username,
-    [string]$NewDisplayName,
-    [string]$NewEmail
+    [string]$NewPassword
 )
 
-# Charger le module Active Directory
+# Importer le module Active Directory
 Import-Module ActiveDirectory
 
+# Changer le mot de passe
 try {
-    # Rechercher l'utilisateur dans AD
-    $user = Get-ADUser -Filter {SamAccountName -eq $Username}
-
-    if ($user) {
-        # Modifier les propriétés de l'utilisateur
-        Set-ADUser -Identity $user.DistinguishedName -DisplayName $NewDisplayName -EmailAddress $NewEmail
-
-        Write-Output "Utilisateur $Username modifié avec succès."
-    } else {
-        Write-Output "Utilisateur $Username non trouvé."
-    }
+    Set-ADAccountPassword -Identity $Username -NewPassword (ConvertTo-SecureString -AsPlainText $NewPassword -Force)
+    Write-Output "Le mot de passe a été changé avec succès pour l'utilisateur $Username."
 } catch {
     Write-Output "Erreur : $_"
 }
-
