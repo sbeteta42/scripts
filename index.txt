@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modification d'utilisateur AD</title>
+    <title>Changer le mot de passe Active Directory</title>
 </head>
 <body>
-    <h1>Modifier un utilisateur Active Directory</h1>
-    <form id="adForm">
+    <h1>Changer le mot de passe Active Directory</h1>
+    <form method="POST" action="/ChangePassword">
         <label for="username">Nom d'utilisateur :</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" required /><br />
 
-        <label for="displayName">Nom affiché :</label>
-        <input type="text" id="displayName" name="displayName" required><br><br>
+        <label for="newPassword">Nouveau mot de passe :</label>
+        <input type="password" id="newPassword" name="newPassword" required /><br />
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <button type="submit">Modifier</button>
+        <button type="submit">Changer le mot de passe</button>
     </form>
-
-    <div id="response"></div>
-
-    <script>
-        document.getElementById("adForm").addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const displayName = document.getElementById("displayName").value;
-            const email = document.getElementById("email").value;
-
-            const response = await fetch("/scripts/Modify-ADUser.ps1", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ Username: username, NewDisplayName: displayName, NewEmail: email })
-            });
-
-            const result = await response.text();
-            document.getElementById("response").innerText = result;
-        });
-    </script>
 </body>
 </html>
-
