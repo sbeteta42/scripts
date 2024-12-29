@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données du formulaire
+    // Récupére les données du formulaire
     $username = escapeshellarg($_POST['username']);
     $currentPassword = escapeshellarg($_POST['current_password']);
     $newPassword = escapeshellarg($_POST['new_password']);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Commande PowerShell
     $command = "powershell -NoProfile -ExecutionPolicy Bypass -File $scriptPath -username $username -currentPassword $currentPassword -newPassword $newPassword";
 
-    // Exécuter le script PowerShell
+    // Exécute le script PowerShell
     $output = [];
     $returnCode = 0;
     exec($command, $output, $returnCode);
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Modifier le mot de passe Active Directory</title>
+    <title>Modifier votre mot de passe Active Directory</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .success { color: green; font-weight: bold; }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <h1>Modifier le mot de passe Active Directory</h1>
+    <h1>Modifier votre mot de passe Active Directory</h1>
     
     <?php if (isset($success)): ?>
         <div class="<?= $success ? 'success' : 'error' ?>">
