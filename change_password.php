@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newPassword = escapeshellarg($_POST['new_password']);
 
     // Chemin vers le script PowerShell
-    $scriptPath = "C:\\Scripts\\Modify-ADPassword.ps1";
+    $scriptPath = "C:\\Scripts\\Set-ADPassword.ps1";
 
     // Commande PowerShell
     $command = "powershell -NoProfile -ExecutionPolicy Bypass -File $scriptPath -username $username -currentPassword $currentPassword -newPassword $newPassword";
