@@ -16,11 +16,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $returnCode = 0;
     exec($command, $output, $returnCode);
 
-    // Afficher le résultat
+    // Traitement du résultat
+    $resultMessage = '';
     if ($returnCode === 0) {
-        echo "<p>Résultat : " . implode("<br>", $output) . "</p>";
+        // Analyse des résultats retournés par PowerShell
+        $resultMessage = implode("<br>", $output);
+        if (strpos($resultMessage, "modifié avec succès") !== false) {
+            $success = true;
+        } elseif (strpos($resultMessage, "Le mot de passe actuel est incorrect") !== false) {
+            $success = false;
+            $resultMessage = "Erreur : Le mot de passe actuel est incorrect.";
+        } elseif (strpos($resultMessage, "n'existe pas") !== false) {
+            $success = false;
+            $resultMessage = "Erreur : L'utilisateur spécifié n'existe pas.";
+        } else {
+            $success = false;
+            $resultMessage = "Erreur : Une erreur inconnue s'est produite.";
+        }
     } else {
-        echo "<p>Une erreur s'est produite lors de la modification du mot de passe.</p>";
+        $success = false;
+        $resultMessage = "Erreur : Impossible d'exécuter le script PowerShell.";
     }
 }
 ?>
@@ -30,9 +45,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Modifier le mot de passe Active Directory</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+    </style>
 </head>
 <body>
     <h1>Modifier le mot de passe Active Directory</h1>
+    
+    <?php if (isset($success)): ?>
+        <div class="<?= $success ? 'success' : 'error' ?>">
+            <?= htmlspecialchars($resultMessage) ?>
+        </div>
+        <hr>
+    <?php endif; ?>
+
     <form method="POST" action="">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required><br><br>
