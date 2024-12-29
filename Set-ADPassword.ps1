@@ -1,3 +1,5 @@
+# modification d'un mot de passe Active Directory
+#par sbeteta@beteta.org
 param(
     [string]$username,
     [string]$newPassword
