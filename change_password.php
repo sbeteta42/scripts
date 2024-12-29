@@ -1,4 +1,5 @@
 <?php
+//formulaire qui execute un script powershell pour modifier un mot de passe d'un compte Active Directory
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données du formulaire
     $username = escapeshellarg($_POST['username']);
