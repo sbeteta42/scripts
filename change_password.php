@@ -4,6 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = escapeshellarg($_POST['username']);
     $currentPassword = escapeshellarg($_POST['current_password']);
     $newPassword = escapeshellarg($_POST['new_password']);
+    $confirnewPassword = escapeshellarg($_POST['confirmnew_password']);
+
 
     // Chemin vers le script PowerShell
     $scriptPath = "C:\\Scripts\\Set-ADPassword.ps1";
@@ -70,6 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="new_password">Nouveau mot de passe :</label>
         <input type="password" id="new_password" name="new_password" required><br><br>
+
+        <label for="confirm_new_password">Confirmer le nouveau mot de passe :</label>
+        <input type="password" id="confirmnew_password" name="confirmnew_password" required><br><br>
 
         <button type="submit">Modifier le mot de passe</button>
     </form>
