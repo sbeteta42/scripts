@@ -70,7 +70,11 @@
 
         // Afficher le résultat
         echo "<h2>Résultat :</h2>";
-        echo "<pre>" . implode("\n", $output) . "</pre>";
+        if (!empty($output)) {
+            echo "<pre>" . htmlspecialchars(implode("\n", $output)) . "</pre>";
+        } else {
+            echo "<p style='color: red;'>Erreur : Impossible d'exécuter le script PowerShell.</p>";
+        }
 
         // Supprimer le fichier PowerShell temporaire
         unlink($psScriptFile);
