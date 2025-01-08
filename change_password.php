@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $scriptPath = "C:\\Scripts\\Set-ADPassword.ps1";
 
     // Commande PowerShell
-    $command = "powershell -NoProfile -ExecutionPolicy Bypass -File $scriptPath -username $username -currentPassword $currentPassword -newPassword $newPassword";
+    $command = "powershell -NoProfile -ExecutionPolicy Bypass -File $scriptPath -username $username -currentPassword $currentPassword -newPassword $newPassword -Confirm $confirnewPassword";
 
     // Exécute le script PowerShell
     $output = [];
