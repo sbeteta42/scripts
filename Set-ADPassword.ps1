@@ -1,6 +1,3 @@
-# demande de modification d'un mot de passe Active Directory
-#par sbeteta@beteta.org
-
 # Importer le module Active Directory
 Import-Module ActiveDirectory
 
@@ -40,5 +37,5 @@ try {
                           -Confirm:$false
     Write-Host "Mot de passe pour l'utilisateur '$username' modifié avec succès." -ForegroundColor Green
 } catch {
-    Write-Host "Erreur : $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "Erreur lors de la modification du mot de passe : $($_.Exception.Message)" -ForegroundColor Red
 }
