@@ -25,24 +25,24 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePassword'])) {
-        // Récupérer les valeurs du formulaire
+        // Récupération des valeurs du formulaire
         $username = $_POST['username'];
         $currentPassword = $_POST['currentPassword'];
         $newPassword = $_POST['newPassword'];
         $confirmPassword = $_POST['confirmPassword'];
 
-        // Vérifier que les deux nouveaux mots de passe correspondent
+        // On Vérifie que les deux nouveaux mots de passe correspondent bien
         if ($newPassword !== $confirmPassword) {
             echo "<p style='color: red;'>Erreur : Les nouveaux mots de passe ne correspondent pas.</p>";
             exit;
         }
 
-        // Créer le script PowerShell à exécuter
+        // Création du script PowerShell à exécuter
         $psScript = <<<PSSCRIPT
         # Importer le module Active Directory
         Import-Module ActiveDirectory
 
-        # Définir les variables
+        # Définition des variables
         \$username = "$username"
         \$currentPassword = ConvertTo-SecureString "$currentPassword" -AsPlainText -Force
         \$newPassword = ConvertTo-SecureString "$newPassword" -AsPlainText -Force
