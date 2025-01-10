@@ -25,24 +25,24 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['changePassword'])) {
-        // On récupére les valeurs du formulaire
+        // Récupérer les valeurs du formulaire
         $username = $_POST['username'];
         $currentPassword = $_POST['currentPassword'];
         $newPassword = $_POST['newPassword'];
         $confirmPassword = $_POST['confirmPassword'];
 
-        // On Vérifie que les deux nouveaux mots de passe correspondent bien...
+        // Vérifier que les deux nouveaux mots de passe correspondent
         if ($newPassword !== $confirmPassword) {
             echo "<p style='color: red;'>Erreur : Les nouveaux mots de passe ne correspondent pas.</p>";
             exit;
         }
 
-        // Création du script PowerShell à exécuter
+        // Créer le script PowerShell à exécuter
         $psScript = <<<PSSCRIPT
         # Importer le module Active Directory
         Import-Module ActiveDirectory
 
-        # Définition des variables
+        # Définir les variables
         \$username = "$username"
         \$currentPassword = ConvertTo-SecureString "$currentPassword" -AsPlainText -Force
         \$newPassword = ConvertTo-SecureString "$newPassword" -AsPlainText -Force
@@ -59,16 +59,16 @@
         }
         PSSCRIPT;
 
-        // Enregistre le script PowerShell temporairement
+        // Enregistrer le script PowerShell temporairement
         $psScriptFile = tempnam(sys_get_temp_dir(), "psscript") . ".ps1";
         file_put_contents($psScriptFile, $psScript);
 
-        // Exécute le script PowerShell
+        // Exécuter le script PowerShell
         $output = [];
         $returnVar = 0;
         exec("powershell -ExecutionPolicy Bypass -File " . escapeshellarg($psScriptFile), $output, $returnVar);
 
-        // Affiche le résultat
+        // Afficher le résultat
         echo "<h2>Résultat :</h2>";
         if (!empty($output)) {
             echo "<pre>" . htmlspecialchars(implode("\n", $output)) . "</pre>";
