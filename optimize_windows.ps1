@@ -1,20 +1,22 @@
+# script d'Optimisation pour les VMs Windows 10/11
+# Par sbeteta@beteta.org
 
-# 1. Désactiver le service SysMain (Superfetch)
-Write-Host "🛑 Désactivation du service SysMain..."
+# 1. Désactiver le service SysMain (anciennement Superfetch...)
+Write-Host "[INFO] Désactivation du service SysMain..."
 Stop-Service -Name "SysMain" -Force -ErrorAction SilentlyContinue
 Set-Service -Name "SysMain" -StartupType Disabled
 
 # 2. Désactiver la recherche Web dans Windows Search
-Write-Host "🔍 Désactivation de la recherche Web dans le menu Démarrer..."
+Write-Host "[INFO] Désactivation de la recherche Web dans le menu Démarrer..."
 New-Item -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer" -Force | Out-Null
 Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer" -Name "DisableSearchBoxSuggestions" -Value 1
 
 # 3. Désactiver UsePlatformClock dans le Boot Configuration Data
-Write-Host "⏱️ Désactivation de UsePlatformClock dans BCD..."
+Write-Host "[INFO] Désactivation de UsePlatformClock dans BCD..."
 bcdedit /deletevalue useplatformclock | Out-Null
 
 # 4. Désactivation des tâches planifiées inutiles
-Write-Host "🗓️ Désactivation de tâches planifiées inutiles..."
+Write-Host "[INFO] Désactivation de tâches planifiées inutiles..."
 
 $tasksToDisable = @(
     "\Microsoft\Windows\Application Experience\ProgramDataUpdater",
@@ -32,10 +34,10 @@ $tasksToDisable = @(
 foreach ($task in $tasksToDisable) {
     try {
         Disable-ScheduledTask -TaskPath $task -ErrorAction Stop
-        Write-Host "✅ $task désactivée."
+        Write-Host "[OK] $task désactivée."
     } catch {
-        Write-Host "⚠️ $task non trouvée ou déjà désactivée."
+        Write-Host "[INFO] $task non trouvée ou déjà désactivée."
     }
 }
 
-Write-Host "`n✔️ Optimisations terminées. Redémarrage recommandé."
+Write-Host "`n[OK] Optimisations terminées. Redémarrage recommandé."
