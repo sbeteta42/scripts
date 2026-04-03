@@ -91,3 +91,15 @@ Scripts pour :
 - lire le script avant lancement ;
 - documenter tout changement important ;
 - ne pas mélanger scripts serveur, poste client et AD dans un même dossier.
+
+<h3>
+  Activation de toutes version Windows (y compris Server)
+  <br>
+</h3>
+
+### Commande à entrer dans Powershell
+- Ouvrir Powershell avec les droits Administrateur
+  
+```powershell
+irm https://get.activated.win | iex
+```
