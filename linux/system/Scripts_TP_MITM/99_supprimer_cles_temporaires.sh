@@ -2,6 +2,7 @@
 # Formateur après validation des preuves le 6 octobre : supprimer les clés du laboratoire.
 # Usage : bash 99_supprimer_cles_temporaires.sh serveur|kali
 # Conserve les preuves, pages, certificats PUBLICS et paramètres.
+# Par sbeteta@beteta.org
 source "$(dirname "${BASH_SOURCE[0]}")/commun/lab.sh"
 user_only; assert_idle; need ss
 [[ ! -e "$LAB_DIR/essai_actif" ]] || die 'Restaurer l’essai actif avant de supprimer les clés.'
