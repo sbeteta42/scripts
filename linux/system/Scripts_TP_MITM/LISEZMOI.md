@@ -1,8 +1,7 @@
 # Scripts séparés - TP MITM et ARP spoofing
 
-Support : TP apprenant corrigé le 4 octobre 2026, « MITM_TP_Apprenants(2).docx », et fiche de contrôle du laboratoire du 6 octobre. Formation Stéphane Beteta — https://formation.beteta.org
-
-Les cinq TP se déroulent de 14 h à 17 h 15, après les contrôles de 12 h à 13 h. Séance : 09–13 h et 14–18 h. Ces scripts reprennent les opérations du support. Ils n’utilisent pas Open vSwitch.
+Support : TP apprenant corrigé le 4 octobre 2026, « MITM_TP_Apprenants.docx », et fiche de contrôle du laboratoire du 6 octobre. 
+Les 5 TP se déroulent de 14 h à 17 h 15, après les contrôles de 12 h à 13 h. Séance : 09-13 h et 14-18 h. Ces scripts reprennent les opérations du support. Ils n’utilisent pas Open vSwitch.
 
 **État de validation : syntaxe Bash/POSIX et contrôles locaux effectués ; aucun essai sur vos VM réelles. PowerShell a fait l’objet d’une revue, sans exécution sous Windows.** Les contrôles réseau, hyperviseur, curl/Schannel, droits de capture et version FreeSCO doivent être consignés sur la fiche.
 
