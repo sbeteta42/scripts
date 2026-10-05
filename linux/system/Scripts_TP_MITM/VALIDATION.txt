@@ -1,0 +1,16 @@
+VALIDATION LOCALE — SCRIPTS TP MITM — 4 OCTOBRE 2026
+
+30 scripts séparés : 24 scripts shell, 6 scripts PowerShell ; guide LISEZMOI.md.
+- Syntaxe bash -n : 23 fichiers valides.
+- Syntaxe sh -n : script POSIX FreeSCO valide.
+- Scénarios TP2, TP3, TP4 et TP5 avec commandes réseau simulées : sauvegarde unique, refus d’essais concurrents, retrait ciblé des règles et restitution des dix paramètres sysctl.
+- Échec partiel après création de la chaîne NAT : récupération vérifiée.
+- Référence altérée : restauration refusée, témoin d’essai conservé.
+- Aucun vidage global ou rechargement aveugle du pare-feu.
+- Écarts sysctl hors des dix valeurs suivies conservés pour analyse.
+
+Les tests simulés ne produisent aucun trafic ARP et ne modifient pas le système de test. Le contrôle du compte utilisateur est neutralisé uniquement dans une copie de test, car le runtime de vérification est root ; le refus root est conservé dans tous les scripts livrés.
+
+PowerShell : revue des commandes et paramètres, encodage UTF-8 avec BOM pour Windows PowerShell 5.1. Aucun runtime PowerShell disponible : aucune exécution ni validation par le parseur PowerShell revendiquée.
+
+Aucun essai exécuté sur les VM réelles Kali, Windows, Debian, FreeSCO ou serveur. Restent à valider dans la fiche : VMware/isolement, adressage/DHCP, routage/NAT, pare-feu effectif, compatibilité curl TLS et mitmproxy, droits Npcap/dumpcap, options FreeSCO, SAN/dates/horloges, interception applicative et reconstruction des caches.
