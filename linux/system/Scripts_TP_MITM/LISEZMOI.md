@@ -1,4 +1,4 @@
-# Scripts séparés — TP MITM et ARP spoofing
+# Scripts séparés - TP MITM et ARP spoofing
 
 Support : TP apprenant corrigé le 4 octobre 2026, « MITM_TP_Apprenants(2).docx », et fiche de contrôle du laboratoire du 6 octobre. Formation Stéphane Beteta — https://formation.beteta.org
 
